@@ -5,15 +5,14 @@ class Generator:
         self.solved = ''
         self.unsolved = ''
 
-        @property
-        def grid(self):
-            return self._grid
+    @property
+    def grid(self):
+        return self._grid
 
-        @grid.setter
-        def grid(self, grid):
-            self._grid = grid
+    @grid.setter
+    def grid(self, grid):
+        self._grid = grid
 
-    # ------------------ Sudoku Generator ------------------
     def generate_number(self):
         base  = 3
         side  = base*base
@@ -46,6 +45,7 @@ class Generator:
         numSize = len(str(side))
         for line in self._grid:
             self.unsolved += ''.join(str(num).rjust(numSize) for num in line)
+        return self._grid
 
     # Print the board to console
     def print_board(self):
