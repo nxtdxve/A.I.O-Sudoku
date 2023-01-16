@@ -48,14 +48,15 @@ class Generator:
         return self._grid
 
     # Print the board to console
-    def print_board(self):
+    def print_board(self, grid=None):
+        if grid is None:
+            grid = self._grid
         print("\n\n+ ----------- + ----------- + ----------- +",end="")
         for row in range(9):
             print("\n",end="\n|  ")
             for col in range(9):
                 num_end = "  |  " if ((col+1)%3 == 0) else "   "
-                print(self._grid[row][col],end=num_end)
-            
+                print(grid[row][col],end=num_end)
             if ((row+1)%3 == 0):
                 print("\n\n+ ----------- + ----------- + ----------- +",end="")
     
@@ -73,4 +74,4 @@ if __name__ == "__main__":
     print(f'Solved: {generator.solved}')
     print(f'Unsolved: {generator.unsolved}')
     print(f'Grid: {generator._grid}')
-    generator.print_board()
+    generator.print_board(generator._grid)
