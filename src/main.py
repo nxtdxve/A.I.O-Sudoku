@@ -1,8 +1,16 @@
 from generator import Generator
 from solver import Solver
 
+def options():
+    print('1. Generate a new puzzle')
+    print('2. Solve a puzzle')
+    print('3. Exit')
+    choice = input('Enter your choice: ')
+    return choice
+
 
 def main():
+    choice = options()
     generator = Generator()
     generator.generate_number()
     grid = generator.grid
