@@ -14,7 +14,7 @@ def main():
     print('\nSolved Grid without notation:')
     solver.start()
     print('\nSolved string:')
-"""     print(solver.solved_string) """
+    print(solver.solved_string)
 
 
 if __name__ == "__main__":

@@ -22,6 +22,7 @@ class Solver:
                 solved_string += str(grid[i][j])
                 print(grid[i][j],end = " ")
             print()
+        self.solved_string = solved_string
 
     def is_valid(self, grid, row, col, num):
         for x in range(self.M):
