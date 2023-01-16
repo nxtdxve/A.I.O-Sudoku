@@ -2,19 +2,28 @@ from generator import Generator
 
 class Solver:
 
-    def __init__(self):
+    def __init__(self, grid):
         self.M = 9
-        self.generator = Generator()
-        self.grid = self.generator.generate_number()
+        self.grid = grid
+        self._solved_string = ''
 
+        @property
+        def solved_string(self):
+            return self._solved_string
+
+        @solved_string.setter
+        def solved_string(self, solved_string):
+            self._solved_string = solved_string
 
     def puzzle(self,grid):
+        solved_string = ""
         for i in range(self.M):
             for j in range(self.M):
+                solved_string += str(grid[i][j])
                 print(grid[i][j],end = " ")
             print()
 
-    def is_valid(self,grid, row, col, num):
+    def is_valid(self, grid, row, col, num):
         for x in range(self.M):
             if grid[row][x] == num:
                 return False
@@ -29,7 +38,7 @@ class Solver:
                     return False
         return True
 
-    def suduko_solver(self,grid, row, col):
+    def suduko_solver(self, grid, row, col):
         if (row == self.M - 1 and col == self.M):
             return True
         if col == self.M:
@@ -53,5 +62,8 @@ class Solver:
 
 
 if __name__ == "__main__":
-    solver = Solver()
+    generator = Generator()
+    generator.generate_number()
+    grid = generator.grid
+    solver = Solver(grid)
     solver.start()
