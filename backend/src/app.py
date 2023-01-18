@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from generator import Generator
 from solver import Solver
+from checker import Checker
 
 app = Flask(__name__)
 
@@ -9,8 +10,7 @@ def generate():
     generator = Generator()
     generator.generate_number()
     grid = generator.grid
-    solved = generator.solved
-    return jsonify(grid=grid,solved=solved)
+    return jsonify(grid=grid)
 
 """ @app.route('/check', methods=['POST'])
 def check():

@@ -52,13 +52,23 @@ def main():
             generator.print_board(solved_grid)
         else:
             print(colored('Invalid choice, exiting program', 'red'))
-"""     generator = Generator()
-    generator.generate_number()
-    grid = generator.grid
-    solver = Solver(grid)
-    generator.print_board()
-    solved_grid = solver.start()
-    generator.print_board(solved_grid) """
+    elif choice == '99':
+        print(colored('Secret Debug Mode', 'magenta'))
+        generator = Generator()
+        generator.generate_number()
+        grid = generator.grid
+        solver = Solver(grid)
+        print('Generated Grid:')
+        generator.print_board()
+        print('\nGenerated solved string:')
+        print(generator.solved)
+        print('\nGenerated unsolved string:')
+        print(generator.unsolved)
+        print('\nSolved Grid')
+        solved_grid = solver.start()
+        generator.print_board(solved_grid)
+        print('\nSolved string:')
+        print(solver.solved_string)
 
 
 if __name__ == "__main__":
