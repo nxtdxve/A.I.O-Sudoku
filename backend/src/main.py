@@ -51,6 +51,9 @@ def main():
         elif choice == '3':
             solved_grid = solver.start()
             generator.print_board(solved_grid)
+        elif choice == 'exit':
+            print(colored('Exiting program, see you soon :)', 'light_magenta'))
+            exit()
         else:
             print(colored('Invalid choice, exiting program', 'red'))
 
@@ -70,6 +73,9 @@ def main():
         elif choice == '3':
             solved_grid = solver.start()
             generator.print_board(solved_grid)
+        elif choice == 'exit':
+            print(colored('Exiting program, see you soon :)', 'light_magenta'))
+            exit()
         else:
             print(colored('Invalid choice, exiting program', 'red'))
 
@@ -93,6 +99,10 @@ def main():
         generator.print_board(solved_grid)
         print('\nSolved string:')
         print(solver.solved_string)
+
+    elif choice == 'exit':
+        print(colored('Exiting program, see you soon :)', 'light_magenta'))
+        exit()
 
 
 if __name__ == "__main__":
