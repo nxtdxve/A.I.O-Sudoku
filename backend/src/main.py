@@ -3,6 +3,7 @@ from termcolor import colored
 from generator import Generator
 from solver import Solver
 from checker import Checker
+from import_sudoku import ImportSudoku
 
 os.system('color')
 
@@ -35,24 +36,47 @@ def main():
     print(colored('This tool can generate a new puzzle, import a puzzle, solve a puzzle, and check if a puzzle is solvable', 'cyan'))
     print(colored('This tool is still in development, so some features may not work!!!', 'light_red'))
     choice = select_sudoku()
-    if choice == '1':
+    if choice == '1': # -- Generate a new puzzle
         generator = Generator()
         generator.generate_number()
         grid = generator.grid
         solver = Solver(grid)
-        checker = Checker()
+        checker = Checker(grid)
         generator.print_board()
         choice = how_to_solve()
         if choice == '1':
-            solver.solve_puzzle()
+            print(colored('Solving the puzzle yourself is not supported yet :(', 'red'))
         elif choice == '2':
-            checker.check_solvable(grid)
+            print(checker.check_solvable(grid))
         elif choice == '3':
             solved_grid = solver.start()
             generator.print_board(solved_grid)
         else:
             print(colored('Invalid choice, exiting program', 'red'))
-    elif choice == '99':
+
+    elif choice == '2': # -- Import a puzzle
+        import_sudoku = ImportSudoku()
+        grid = import_sudoku.import_sudoku()
+        solver = Solver(grid)
+        checker = Checker(grid)
+        generator = Generator()
+        generator.grid = grid
+        generator.print_board(grid)
+        choice = how_to_solve()
+        if choice == '1':
+            print(colored('Solving the puzzle yourself is not supported yet :(', 'red'))
+        elif choice == '2':
+            print(checker.check_solvable(grid))
+        elif choice == '3':
+            solved_grid = solver.start()
+            generator.print_board(solved_grid)
+        else:
+            print(colored('Invalid choice, exiting program', 'red'))
+
+    elif choice == '3': # -- Select a puzzle
+        print(colored('Selecting a puzzle is not supported yet :(', 'red'))
+
+    elif choice == '99': # -- Debug mode
         print(colored('Secret Debug Mode', 'magenta'))
         generator = Generator()
         generator.generate_number()
