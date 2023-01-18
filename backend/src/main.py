@@ -1,7 +1,11 @@
+import os
 from termcolor import colored
 from generator import Generator
 from solver import Solver
 from checker import Checker
+
+os.system('color')
+
 
 def select_sudoku():
     print(colored('\n     Which Sudoku would you like to use?', 'white'))
