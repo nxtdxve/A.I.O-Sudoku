@@ -1,4 +1,6 @@
 import os
+import pyfiglet
+
 from termcolor import colored
 from generator import Generator
 from solver import Solver
@@ -32,6 +34,19 @@ def how_to_solve():
 
 
 def main():
+    a="""
+ ▄▄▄            ██▓      ▒█████            ██████  █    ██ ▓█████▄  ▒█████   ██ ▄█▀ █    ██ 
+▒████▄         ▓██▒     ▒██▒  ██▒        ▒██    ▒  ██  ▓██▒▒██▀ ██▌▒██▒  ██▒ ██▄█▒  ██  ▓██▒
+▒██  ▀█▄       ▒██▒     ▒██░  ██▒        ░ ▓██▄   ▓██  ▒██░░██   █▌▒██░  ██▒▓███▄░ ▓██  ▒██░
+░██▄▄▄▄██      ░██░     ▒██   ██░          ▒   ██▒▓▓█  ░██░░▓█▄   ▌▒██   ██░▓██ █▄ ▓▓█  ░██░
+ ▓█   ▓██▒ ██▓ ░██░ ██▓ ░ ████▓▒░ ██▓    ▒██████▒▒▒▒█████▓ ░▒████▓ ░ ████▓▒░▒██▒ █▄▒▒█████▓ 
+ ▒▒   ▓▒█░ ▒▓▒ ░▓   ▒▓▒ ░ ▒░▒░▒░  ▒▓▒    ▒ ▒▓▒ ▒ ░░▒▓▒ ▒ ▒  ▒▒▓  ▒ ░ ▒░▒░▒░ ▒ ▒▒ ▓▒░▒▓▒ ▒ ▒ 
+  ▒   ▒▒ ░ ░▒   ▒ ░ ░▒    ░ ▒ ▒░  ░▒     ░ ░▒  ░ ░░░▒░ ░ ░  ░ ▒  ▒   ░ ▒ ▒░ ░ ░▒ ▒░░░▒░ ░ ░ 
+  ░   ▒    ░    ▒ ░ ░   ░ ░ ░ ▒   ░      ░  ░  ░   ░░░ ░ ░  ░ ░  ░ ░ ░ ░ ▒  ░ ░░ ░  ░░░ ░ ░ 
+      ░  ░  ░   ░    ░      ░ ░    ░           ░     ░        ░        ░ ░  ░  ░      ░     
+            ░        ░             ░                        ░                               
+    """ # Bloody Font
+    print(colored(a, 'blue'))
     print(colored('Welcome to my A.I.O Sudoku tool', 'cyan'))
     print(colored('This tool can generate a new puzzle, import a puzzle, solve a puzzle, and check if a puzzle is solvable', 'cyan'))
     print(colored('This tool is still in development, so some features may not work!!!', 'light_red'))

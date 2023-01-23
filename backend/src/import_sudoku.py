@@ -31,6 +31,9 @@ class ImportSudoku:
             raise ValueError("Input is not a valid sudoku puzzle")
         return self.grid
 
+    def image_to_grid(self, image):
+        pass
+
 if __name__ == "__main__":
     # Create an instance of ImportSudoku
     importer = ImportSudoku()
