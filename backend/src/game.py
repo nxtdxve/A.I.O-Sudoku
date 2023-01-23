@@ -9,7 +9,6 @@ class SudokuGame:
         self.grid = grid
         pygame.init()
 
-        self.font = pygame.font.SysFont("comicsans", 40)
         self.grid_size = 9
         self.grid_cell_size = 60
         self.subgrid_thickness = 1
@@ -19,6 +18,7 @@ class SudokuGame:
         self.screen = pygame.display.set_mode(self.screen_size)
         pygame.display.set_caption("Sudoku")
 
+        self.font = pygame.font.SysFont("comicsans", 40)
         self.run()
 
     def run(self):
@@ -42,8 +42,10 @@ class SudokuGame:
         for i in range(9):
             for j in range(9):
                 if self.grid[i][j] != 0:
+                    x = j * self.grid_cell_size + (self.grid_cell_size - self.font.size(str(self.grid[i][j]))[0]) // 2 + self.grid_thickness - 3
+                    y = i * self.grid_cell_size + (self.grid_cell_size - self.font.size(str(self.grid[i][j]))[1]) // 2 + self.grid_thickness - 4
                     text = self.font.render(str(self.grid[i][j]), 1, (0, 0, 0))
-                    self.screen.blit(text, (j * 60 + 20, i * 60 + 20))
+                    self.screen.blit(text, (x, y))
 
         for i in range(10):
             if i % 3 == 0:
@@ -53,7 +55,7 @@ class SudokuGame:
             pygame.draw.line(self.screen, (0, 0, 0), (0, i * 60), (540, i * 60), thickness)
             pygame.draw.line(self.screen, (0, 0, 0), (i * 60, 0), (i * 60, 540), thickness)
 
-        pygame.display.update()
+        pygame.display.flip()
 
 
 if __name__ == "__main__":
