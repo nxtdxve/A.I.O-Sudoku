@@ -4,11 +4,12 @@ from generator import Generator
 from solver import Solver
 from checker import Checker
 
-class Game:
+class SudokuGame:
     def __init__(self, grid):
         self.grid = grid
         pygame.init()
 
+        self.font = pygame.font.SysFont("comicsans", 40)
         self.grid_size = 9
         self.grid_cell_size = 60
         self.subgrid_thickness = 1
@@ -56,16 +57,9 @@ class Game:
 
 
 if __name__ == "__main__":
-    grid = [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    ]
-    game = Game(grid)
+    generator = Generator()
+    generator.generate_number()
+    grid = generator.grid
+
+    game = SudokuGame(grid)
 
