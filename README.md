@@ -8,7 +8,7 @@ A sudoku game with self solving and generating sudokus
 - [x] Check if sudoku is solvable
 - [x] Solve sudoku yourself
   - [ ] Get hints
-  - [ ] Diffrent fonts for numbers deppending if they are given or not
+  - [x] Diffrent fonts for numbers deppending if they are given or not - (edit: just the background)
   - [x] Make generated numbers not editable
   - [ ] show wrong numbers
   - [ ] diffrent difficulty levels  
