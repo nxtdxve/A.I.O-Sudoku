@@ -38,20 +38,18 @@ class SudokuGame:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = event.pos[0] // self.grid_cell_size, event.pos[1] // self.grid_cell_size
                 if 0 <= x < self.grid_size and 0 <= y < self.grid_size:
-                    running = True
-                    while running:
-                        for event in pygame.event.get():
-                            if event.type == pygame.QUIT:
-                                running = False
-                                pygame.quit()
-                                quit()
-                            if event.type == pygame.KEYDOWN:
-                                if event.unicode.isnumeric():
-                                    self.grid[y][x] = int(event.unicode)
+                    if self.grid[y][x] == 0:
+                        running = True
+                        while running:
+                            for event in pygame.event.get():
+                                if event.type == pygame.QUIT:
                                     running = False
-
-
-
+                                    pygame.quit()
+                                    quit()
+                                if event.type == pygame.KEYDOWN:
+                                    if event.unicode.isnumeric():
+                                        self.grid[y][x] = int(event.unicode)
+                                        running = False
 
     def update(self):
         pass

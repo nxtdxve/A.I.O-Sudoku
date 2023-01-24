@@ -9,7 +9,7 @@ A sudoku game with self solving and generating sudokus
 - [x] Solve sudoku yourself
   - [ ] Get hints
   - [ ] Diffrent fonts for numbers deppending if they are given or not
-  - [ ] Make generated numbers not editable
+  - [x] Make generated numbers not editable
   - [ ] show wrong numbers
   - [ ] diffrent difficulty levels  
 - [X] UI 
