@@ -6,6 +6,7 @@ from generator import Generator
 from solver import Solver
 from checker import Checker
 from import_sudoku import ImportSudoku
+from game import SudokuGame
 
 os.system('color')
 

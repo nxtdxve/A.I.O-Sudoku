@@ -1,3 +1,5 @@
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" # Hide Pygame welcome message in console
 import pygame
 
 from generator import Generator
@@ -8,6 +10,7 @@ class SudokuGame:
     def __init__(self, grid):
         self.grid = grid
         pygame.init()
+        pygame.key.set_repeat(100, 100)
 
         self.grid_size = 9
         self.grid_cell_size = 60
@@ -32,6 +35,23 @@ class SudokuGame:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.playing = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                x, y = event.pos[0] // self.grid_cell_size, event.pos[1] // self.grid_cell_size
+                if 0 <= x < self.grid_size and 0 <= y < self.grid_size:
+                    running = True
+                    while running:
+                        for event in pygame.event.get():
+                            if event.type == pygame.QUIT:
+                                running = False
+                                pygame.quit()
+                                quit()
+                            if event.type == pygame.KEYDOWN:
+                                if event.unicode.isnumeric():
+                                    self.grid[y][x] = int(event.unicode)
+                                    running = False
+
+
+
 
     def update(self):
         pass
