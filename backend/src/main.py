@@ -61,7 +61,8 @@ def main():
         generator.print_board()
         choice = how_to_solve()
         if choice == '1':
-            print(colored('Solving the puzzle yourself is not supported yet :(', 'red'))
+            game = SudokuGame(grid)
+            game.start()
         elif choice == '2':
             print(checker.check_solvable(grid))
         elif choice == '3':
@@ -83,7 +84,8 @@ def main():
         generator.print_board(grid)
         choice = how_to_solve()
         if choice == '1':
-            print(colored('Solving the puzzle yourself is not supported yet :(', 'red'))
+            game = SudokuGame(grid)
+            game.start()
         elif choice == '2':
             print(checker.check_solvable(grid))
         elif choice == '3':
