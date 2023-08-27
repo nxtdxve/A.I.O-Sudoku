@@ -50,7 +50,7 @@ def main():
     print(colored(a, 'blue'))
     print(colored('Welcome to my A.I.O Sudoku tool', 'cyan'))
     print(colored('This tool can generate a new puzzle, import a puzzle, solve a puzzle, and check if a puzzle is solvable', 'cyan'))
-    print(colored('This tool is still in development, so some features may not work!!!', 'light_red'))
+    print(colored('This tool is still in development, so some features may not work!!!', 'red'))
     choice = select_sudoku()
     if choice == '1': # -- Generate a new puzzle
         generator = Generator()
@@ -69,7 +69,7 @@ def main():
             solved_grid = solver.start()
             generator.print_board(solved_grid)
         elif choice == 'exit':
-            print(colored('Exiting program, see you soon :)', 'light_magenta'))
+            print(colored('Exiting program, see you soon :)', 'magenta'))
             exit()
         else:
             print(colored('Invalid choice, exiting program', 'red'))
@@ -92,7 +92,7 @@ def main():
             solved_grid = solver.start()
             generator.print_board(solved_grid)
         elif choice == 'exit':
-            print(colored('Exiting program, see you soon :)', 'light_magenta'))
+            print(colored('Exiting program, see you soon :)', 'magenta'))
             exit()
         else:
             print(colored('Invalid choice, exiting program', 'red'))
@@ -119,7 +119,7 @@ def main():
         print(solver.solved_string)
 
     elif choice == 'exit':
-        print(colored('Exiting program, see you soon :)', 'light_magenta'))
+        print(colored('Exiting program, see you soon :)', 'magenta'))
         exit()
 
 
